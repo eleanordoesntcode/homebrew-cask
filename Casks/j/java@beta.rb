@@ -1,9 +1,9 @@
 cask "java@beta" do
   arch arm: "aarch64", intel: "x64"
 
-  version "24,34"
-  sha256 arm:   "15d2def9c45050f061e0b27c2ad9112fbb5ee71d82282ffbc7ec9535ef41fe51",
-         intel: "6c73bb78296c28e092f01d0cee253a5964a586827b42c3f1cefde79ea25feb72"
+  version "25,9"
+  sha256 arm:   "6a55f389999988813c03e8928685f6fe8996e56ee85536869dd9d1ba7dc634f9",
+         intel: "b8df0f3869fa86f4c1c4329f6d717982b547c404d0713f7e1fa6ffbfc8afcfec"
 
   url "https://download.java.net/java/early_access/jdk#{version.major}/#{version.csv.second}/GPL/openjdk-#{version.csv.first}-ea+#{version.csv.second}_macos-#{arch}_bin.tar.gz"
   name "OpenJDK Early Access Java Development Kit"
@@ -11,10 +11,21 @@ cask "java@beta" do
   homepage "https://jdk.java.net/"
 
   livecheck do
-    url "https://jdk.java.net/#{version.major}/"
+    url :homepage
     regex(%r{href=.*?/GPL/openjdk-(\d+)-ea\+(\d+)_macos-#{arch}_bin\.t}i)
     strategy :page_match do |page, regex|
-      page.scan(regex).map { |match| "#{match[0]},#{match[1]}" }
+      ea_text = page[%r{<h\d+>\s*Early\s+access:.+?</h\d+>}im]
+      next unless ea_text
+
+      highest_version = ea_text.scan(/JDK\s*(\d+)/i)
+                               .flatten
+                               .uniq
+                               .map { |v| Version.new(v) }
+                               .max
+      next unless highest_version
+
+      version_page = Homebrew::Livecheck::Strategy.page_content("https://jdk.java.net/#{highest_version}/")
+      version_page[:content]&.scan(regex)&.map { |match| "#{match[0]},#{match[1]}" }
     end
   end
 

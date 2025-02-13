@@ -1,6 +1,6 @@
 cask "tachidesk-sorayomi" do
-  version "0.5.23"
-  sha256 "fcbc26b4d79d11aee89ce49169d2037cc1aaeed2133ff0b63b4474c4e5d0bea9"
+  version "0.6.1"
+  sha256 "3405d65fb23517e28e87bfb16817e5d439fb8d789b0fea9428e9c3caa1116aa5"
 
   url "https://github.com/Suwayomi/Tachidesk-Sorayomi/releases/download/#{version}/tachidesk-sorayomi-#{version}-macos-x64.zip"
   name "Tachidesk Sorayomi"
@@ -9,7 +9,7 @@ cask "tachidesk-sorayomi" do
 
   depends_on macos: ">= :catalina"
 
-  app "Tachidesk Sorayomi.app"
+  app "Sorayomi.app"
 
   zap trash: [
     "~/Library/Application Scripts/com.suwayomi.tachideskSorayomi",

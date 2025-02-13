@@ -30,6 +30,7 @@ adguard@nightly
 adobe-acrobat-pro
 adobe-acrobat-reader
 adobe-air
+adobe-dng-converter
 adrive
 aerial@beta
 affine
@@ -158,6 +159,7 @@ box-drive
 brave-browser
 brave-browser@beta
 brave-browser@nightly
+breitbandmessung
 brewtarget
 bricklink-studio
 brickstore
@@ -192,7 +194,9 @@ cardpresso
 chatall
 chatbox
 chatgpt
+chatwise
 chatwork
+cherry-studio
 chia
 chipmunk
 chirp
@@ -264,6 +268,7 @@ cyberduck
 cycling74-max
 daedalus-mainnet
 dangerzone
+darktable
 dash-dash
 dashcam-viewer
 datadog-agent
@@ -286,6 +291,7 @@ dcp-o-matic-player
 dcp-o-matic-playlist-editor
 ddnet
 ddpm
+deadbolt
 decentr
 deckset
 deeper
@@ -309,6 +315,8 @@ discord@canary
 discord@development
 discord@ptb
 diskcatalogmaker
+display-pilot
+distroav
 djstudio
 dockdoor
 dockside
@@ -467,6 +475,7 @@ frappe-books
 free-download-manager
 free42-binary
 free42-decimal
+freeplane
 freeshow
 freetube
 freeyourmusic
@@ -490,6 +499,7 @@ geogebra@5
 geph
 ghostty
 ghostty@tip
+gisto
 git-credential-manager
 gitbutler
 gitfox
@@ -530,6 +540,7 @@ halloy
 hancom-docs
 hancom-word
 handbrake
+hapigo
 hashbackup
 hazel
 hbuilderx
@@ -558,6 +569,7 @@ ibackup-viewer
 ibkr
 ibm-cloud-cli
 icollections
+idagio
 ideamaker
 idrive
 igv
@@ -664,6 +676,7 @@ little-snitch
 live-home-3d
 livebook
 lm-studio
+local@beta
 localcan
 localsend
 logi-options+
@@ -754,6 +767,7 @@ mindmac
 minecraft-education
 minecraft-server
 mini-program-studio
+miniconda
 miniforge
 minisim
 minitube
@@ -822,6 +836,7 @@ navicat-for-sql-server
 navicat-for-sqlite
 navicat-premium
 navicat-premium-lite
+navigraph-charts
 neofinder
 neohtop
 neovide
@@ -899,6 +914,7 @@ operadriver
 opgg
 oracle-jdk
 oracle-jdk-javadoc
+oracle-jdk-javadoc@21
 orangedrangon-android-messages
 orbstack
 orcaslicer
@@ -916,6 +932,8 @@ p4
 p4v
 pagico
 panoply
+parallels
+parallels-virtualization-sdk
 parsehub
 path-finder
 pcoipclient
@@ -947,10 +965,12 @@ plex
 plex-htpc
 plex-media-server
 plexamp
+plover
 plus42-binary
 plus42-decimal
 pocket-casts
 podpisuj
+poe
 pokemon-tcg-live
 poker-copilot
 polymail
@@ -1035,6 +1055,7 @@ rancher
 rapidapi
 rapidweaver
 razorsql
+reactotron
 readdle-spark
 reader
 readest
@@ -1105,6 +1126,7 @@ screaming-frog-log-file-analyser
 screaming-frog-seo-spider
 screen-studio
 screenmemory
+screens-assist
 screens-connect
 scrivener
 scrolla
@@ -1153,6 +1175,7 @@ sketch@beta
 skim
 skype
 skype@preview
+slab
 slack
 slack-cli
 slack@beta
@@ -1200,6 +1223,7 @@ steamcmd
 steelseries-gg
 steermouse
 steinberg-activation-manager
+steinberg-mediabay
 stratoshark
 stratoshark@dev
 strongvpn
@@ -1216,9 +1240,11 @@ supernotes
 superwhisper
 surfshark
 surge
+sweet-home3d
 swiftformat-for-xcode
 sync
 syncovery
+syncterm
 syncthing
 syntax-highlight
 tabby
@@ -1271,6 +1297,7 @@ tidelift
 tidgi
 tiger-trade
 tiled
+time-sink
 timemachinestatus
 timeular
 timing
@@ -1371,6 +1398,7 @@ vscodium
 vscodium@insiders
 vsee
 vuescan
+wacom-tablet
 wakatime
 warcraft-logs-uploader
 warp
@@ -1394,6 +1422,7 @@ whatsapp
 whatsapp@beta
 whatsapp@legacy
 whatsize
+whimsical
 whisky
 widelands
 wifi-explorer-pro
@@ -1412,6 +1441,7 @@ wondershare-uniconverter
 wooshy
 wordpresscom-studio
 workflowy
+workspace-one-intelligent-hub
 wpsoffice-cn
 writerside
 xca
