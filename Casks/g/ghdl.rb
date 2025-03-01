@@ -1,11 +1,30 @@
 cask "ghdl" do
-  arch arm: "llvm", intel: "mcode"
+  version "5.0.1"
 
-  version "4.1.0"
-  sha256 arm:   "f46cfeee85c4d76720f5c0d6ad283754bc1dae57ce9f1a3942086bc270094ddc",
-         intel: "8521aafad389eb769de25db13ecaaaade8444431447eb5e801dc2fcf981cdeed"
+  on_arm do
+    on_ventura do
+      sha256 "176f58857caca8039215f9ead3c92b5ce0558a0434152957ca2b219d5b966443"
+      arch "ghdl-llvm-#{version}-macos13-x86_64"
 
-  url "https://github.com/ghdl/ghdl/releases/download/v#{version}/ghdl-macos-11-#{arch}.tgz"
+      caveats do
+        requires_rosetta
+      end
+    end
+    on_sonoma do
+      sha256 "47e9cb8f9d3306e9a896971b2a0acef13776e5b98d71745a2e61d5732d5ec964"
+      arch "ghdl-llvm-#{version}-macos14-aarch64"
+    end
+    on_sequoia do
+      sha256 "efc688710c220bd7a89735e99455531f9b2867319dc0dafa90814e301c555086"
+      arch "ghdl-llvm-#{version}-macos15-aarch64"
+    end
+  end
+  on_intel do
+    sha256 "176f58857caca8039215f9ead3c92b5ce0558a0434152957ca2b219d5b966443"
+    arch "ghdl-llvm-#{version}-macos13-x86_64"
+  end
+
+  url "https://github.com/ghdl/ghdl/releases/download/v#{version}/#{arch}.tar.gz"
   name "ghdl"
   desc "VHDL 2008/93/87 simulator"
   homepage "https://github.com/ghdl/ghdl/"
@@ -15,18 +34,21 @@ cask "ghdl" do
     strategy :github_latest
   end
 
-  binary "bin/ghdl"
-  binary "bin/ghwdump"
+  depends_on macos: ">= :ventura"
+
+  binary "#{arch}/bin/ghdl"
+  binary "#{arch}/bin/ghwdump"
+  binary "#{arch}/bin/ghdl1-llvm"
 
   postflight do
     puts "Creating library symlinks in #{HOMEBREW_PREFIX}/include and #{HOMEBREW_PREFIX}/lib"
-    File.symlink("#{staged_path}/include/ghdl", "#{HOMEBREW_PREFIX}/include/ghdl")
-    File.symlink("#{staged_path}/lib/ghdl", "#{HOMEBREW_PREFIX}/lib/ghdl")
+    File.symlink("#{staged_path}/#{arch}/include/ghdl", "#{HOMEBREW_PREFIX}/include/ghdl")
+    File.symlink("#{staged_path}/#{arch}/lib/ghdl", "#{HOMEBREW_PREFIX}/lib/ghdl")
   end
 
   uninstall_postflight do
     puts "Removing library symlinks in #{HOMEBREW_PREFIX}/include and #{HOMEBREW_PREFIX}/lib"
-    File.unlink("#{HOMEBREW_PREFIX}/include/ghdl", "#{HOMEBREW_PREFIX}/lib/ghdl")
+    File.unlink("#{HOMEBREW_PREFIX}/#{arch}/include/ghdl", "#{HOMEBREW_PREFIX}/#{arch}/lib/ghdl")
   end
 
   # No zap stanza required
