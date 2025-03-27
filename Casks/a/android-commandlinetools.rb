@@ -1,6 +1,6 @@
 cask "android-commandlinetools" do
-  version "11076708"
-  sha256 "7bc5c72ba0275c80a8f19684fb92793b83a6b5c94d4d179fc5988930282d7e64"
+  version "13114758"
+  sha256 "5673201e6f3869f418eeed3b5cb6c4be7401502bd0aae1b12a29d164d647a54e"
 
   url "https://dl.google.com/android/repository/commandlinetools-mac-#{version}_latest.zip",
       verified: "dl.google.com/android/repository/"
@@ -14,14 +14,19 @@ cask "android-commandlinetools" do
   end
 
   conflicts_with cask:    "android-sdk",
-                 formula: "proguard"
+                 formula: "proguard",
+                 formula: "v8"
 
   android_sdk_root = "#{HOMEBREW_PREFIX}/share/android-commandlinetools"
   android_clt_dir = "#{android_sdk_root}/cmdline-tools/latest"
 
   binary "#{android_clt_dir}/bin/apkanalyzer"
   binary "#{android_clt_dir}/bin/avdmanager"
+  binary "#{android_clt_dir}/bin/d8"
   binary "#{android_clt_dir}/bin/lint"
+  binary "#{android_clt_dir}/bin/profgen"
+  binary "#{android_clt_dir}/bin/r8"
+  binary "#{android_clt_dir}/bin/resourceshrinker"
   binary "#{android_clt_dir}/bin/retrace"
   binary "#{android_clt_dir}/bin/screenshot2"
   binary "#{android_clt_dir}/bin/sdkmanager"
