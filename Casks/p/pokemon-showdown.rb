@@ -11,6 +11,8 @@ cask "pokemon-showdown" do
     strategy :extract_plist
   end
 
+  disable! date: "2025-06-07", because: :discontinued
+
   app "Pokemon Showdown.app"
 
   caveats do
