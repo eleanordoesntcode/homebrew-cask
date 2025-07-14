@@ -4,7 +4,7 @@ cask "ghdl" do
   on_linux do
     depends_on arch: :x86_64
     arch intel: "x86_64"
-    sha2 "7c01d68fa63f7e03726c7c089d60565f04d27d5e8966bce23d7286bf0ecee70d"
+    sha256 "7c01d68fa63f7e03726c7c089d60565f04d27d5e8966bce23d7286bf0ecee70d"
   end
   on_macos do
     depends_on macos: ">= :ventura"
