@@ -57,7 +57,7 @@ cask "ghdl" do
 
   no_autobump! because: :requires_manual_review
 
-  directory = "ghdl-llvm-#{version}-macos#{macos_version}-#{arch}"
+  directory = "ghdl-llvm-#{version}-#{os}-#{arch}"
 
   ghdlbins = ["ghdl", "ghwdump", "ghdl1-llvm"]
   ghdlbins.each do |bin|
