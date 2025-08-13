@@ -12,11 +12,11 @@ cask "osu" do
 
   livecheck do
     url :url
-    regex(/^v?((\d+(?:\.\d+)+)(?:-\w+)?)$/i)
-    strategy :github_latest
+    regex(/^v?((\d+(?:\.\d+)+)(?:-lazer)?)$/i)
   end
 
   auto_updates true
+  conflicts_with cask: "osu@tachyon"
   depends_on macos: ">= :sierra"
 
   app "osu!.app"
